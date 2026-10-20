@@ -5,3 +5,5 @@ __pycache__/
 ai_context/
 .vscode/
 outputs/rasters_locales
+ai_context/
+
