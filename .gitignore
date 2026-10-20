@@ -2,3 +2,6 @@
 *.pyo
 __pycache__/
 .venv
+ai_context/
+.vscode/
+
