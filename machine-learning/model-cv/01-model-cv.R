@@ -142,11 +142,11 @@ df_pred_sf_final <- df_pred_sf
 df_pred_sf_final$rendimiento_t_ha <- predicciones_finales$response
 
 dir.create("data/04_results", showWarnings = FALSE)
-dir.create("models", showWarnings = FALSE)
+# dir.create("models", showWarnings = FALSE)
 
 write_sf(df_pred_sf_final, "data/04_results/04-predicciones-cebada-final.geojson", delete_dsn = TRUE)
 write_csv(st_drop_geometry(df_pred_sf_final), "data/04_results/04-predicciones-cebada-final.csv")
-saveRDS(at_rf_final, "models/rf_autotuner_final.rds")
+saveRDS(at_rf_final, "models/rf_autotuner_cv-spatial.rds")
 
 cat("Predicciones y modelo (.rds) guardados exitosamente.\n")
 
@@ -155,56 +155,4 @@ cat("Predicciones y modelo (.rds) guardados exitosamente.\n")
 # ==============================================================================
 cat("\n--- GENERANDO GRÁFICAS PARA ANEXOS ---\n")
 
-# A) Gráfica de Importancia de Variables
-modelo_base_rf <- at_rf_final$learner$model
 
-if (!is.null(modelo_base_rf$variable.importance)) {
-  importancia <- data.frame(
-    Variable = names(modelo_base_rf$variable.importance),
-    Importancia = as.numeric(modelo_base_rf$variable.importance)
-  ) %>%
-    arrange(Importancia) %>%
-    tail(15) 
-  
-  grafico_importancia <- ggplot(importancia, aes(x = reorder(Variable, Importancia), y = Importancia)) +
-    geom_bar(stat = "identity", fill = "#2c3e50") +
-    coord_flip() +
-    theme_minimal(base_size = 14) +
-    labs(
-      title = "Top 15 Variables de Mayor Impacto Predictivo",
-      subtitle = "Importancia por Reducción de Varianza (Permutation)",
-      x = "Variable Biofísica / Climática",
-      y = "Importancia Relativa"
-    )
-  
-  ggsave("data/04_results/grafico_importancia.png", grafico_importancia, width = 9, height = 6, dpi = 300, bg = "white")
-  cat("Gráfico de importancia guardado en 04_results.\n")
-}
-
-# B) Gráfica de Distribución (Densidad)
-df_real <- st_drop_geometry(st_read("data/02_interim/02-parcelas-cebada-rend.geojson", quiet = TRUE)) %>%
-  filter(conjunto == "ENTRENAMIENTO") %>%
-  select(rendimiento = rendimiento_t_ha) %>%
-  mutate(Tipo = "Real (Entrenamiento)")
-
-df_pred <- st_drop_geometry(df_pred_sf_final) %>%
-  select(rendimiento = rendimiento_t_ha) %>%
-  mutate(Tipo = "Estimado (Predicción)")
-
-df_comparativo <- bind_rows(df_real, df_pred)
-
-grafico_distribucion <- ggplot(df_comparativo, aes(x = rendimiento, fill = Tipo)) +
-  geom_density(alpha = 0.6, color = NA) +
-  theme_minimal(base_size = 14) +
-  scale_fill_manual(values = c("Real (Entrenamiento)" = "#34495e", "Estimado (Predicción)" = "#e67e22")) +
-  labs(
-    title = "Distribución del Rendimiento Agrícola: Real vs Estimado",
-    subtitle = "Comparación de densidades para validar la estabilidad de interpolación",
-    x = "Rendimiento (t/ha)",
-    y = "Densidad",
-    fill = "Conjunto"
-  ) +
-  theme(legend.position = "bottom")
-
-ggsave("data/04_results/grafico_distribucion.png", grafico_distribucion, width = 9, height = 6, dpi = 300, bg = "white")
-cat("Gráfico de distribución guardado en 04_results.\n\n¡FLUJO COMPLETADO!")

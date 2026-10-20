@@ -4,4 +4,4 @@ __pycache__/
 .venv
 ai_context/
 .vscode/
-
+outputs/rasters_locales

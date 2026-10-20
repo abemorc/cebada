@@ -9,7 +9,7 @@ library(ggplot2)
 cat("Cargando archivos...\n")
 # 1. Leer los archivos GeoJSON
 original <- st_read("data/02_interim/02-parcelas-cebada-rend.geojson", quiet = TRUE)
-predicciones <- st_read("resultados/predicciones-cebada.geojson", quiet = TRUE)
+predicciones <- st_read("data/04_results/04-predicciones-cebada-final.geojson", quiet = TRUE)
 predicciones2 <- st_read("resultados/predicciones-cebada-spcv-coords.geojson", quiet = TRUE)
 
 
@@ -79,9 +79,9 @@ mapa_interactivo <- mapview(entrenamiento, zcol = "rendimiento_t_ha",
                             layer.name = "Real (Entrenamiento)") +
                             # col.regions = viridisLite::magma(100, direction = -1)) +
                     mapview(predicciones, zcol = "rendimiento_t_ha", 
-                            layer.name = "Estimado (Predicción)" ) +
-                    mapview(predicciones2, zcol = "rendimiento_t_ha", 
-                            layer.name = "Estimado (Predicción2)" )
+                            layer.name = "Estimado (Predicción)" ) 
+                    # mapview(predicciones2, zcol = "rendimiento_t_ha", 
+                            # layer.name = "Estimado (Predicción2)" )
   
                             # col.regions = viridisLite::magma(100, direction = -1))
 
