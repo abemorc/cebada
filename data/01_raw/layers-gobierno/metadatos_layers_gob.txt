@@ -1,0 +1,329 @@
+1. Edafología y Aptitud del Suelo (INEGI)
+inegi-soils.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Unidades edafológicas clasificadas bajo la Base Referencial Mundial del Recurso Suelo (WRB/FAO). Describe los grupos dominantes de suelo (N_G1: Phaeozem, Vertisol, Durisol, Leptosol, etc.), modificadores diagnósticos (N_CP_G1: Epipetrodúrico, Lítico, Háplico, Pélico), textura superficial a 30 cm (TEXTURA: gruesa, media o fina) y fases limitantes (F_SUPERF: pedregosa/rocosa).
+
+Utilidad: Variable predictora determinante en agricultura; define profundidad efectiva libre de tepetate, retención de humedad y fertilidad natural.
+
+inegi-uso-potencial-for.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Áreas zonificadas según su capacidad agrológica para aprovechamiento forestal maderable y no maderable, especificando niveles de potencial y limitantes biofísicas de pendiente o pedregosidad.
+
+Utilidad: Permite delimitar tierras cuya vocación idónea es forestal o de conservación, diferenciándolas del suelo cultivable.
+
+inegi-uso-potencial-pec.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Aptitud de las tierras para actividades pecuarias (ganadería extensiva, praderas y pastizales inducidos o naturales), evaluando la capacidad de sustentación del suelo.
+
+Utilidad: Distinguir áreas de transición entre agricultura de granos y agostaderos ganaderos.
+
+2. Geología y Rasgos Estructurales (INEGI)
+inegi-geology.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Unidades litoestratigráficas superficiales (tipos de roca: volcánicas extrusivas como andesitas y basaltos, sedimentarias, depósitos piroclásticos y aluvión) con sus respectivos periodos geológicos.
+
+Utilidad: Caracterización del material parental que da origen al suelo y evaluación de la permeabilidad litológica regional.
+
+inegi-geology-lines.geojson
+
+
+Geometría: Líneas.
+
+Contenido: Contactos litológicos, fallas geológicas identificadas (normales, inversas o transcurrentes), fracturas mayores y lineamientos tectónicos.
+
+Utilidad: Localización de zonas de recarga preferente de agua subterránea y monitoreo de riesgos por subsidencia o fallamiento superficial.
+
+3. Hidrología y Recursos Hídricos (CONAGUA e INEGI)
+conagua-cuencas.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Delimitación hidrográfica oficial de las cuencas y subcuencas que conducen el agua superficial hacia una salida común.
+
+Utilidad: Delimitación de unidades naturales para balances hidrológicos y delimitación del escurrimiento pluvial.
+
+conagua-organismos-cuenca.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Límites político-administrativos de los Organismos de Cuenca de la CONAGUA (oficinas regionales federales).
+
+Utilidad: Identificar la dirección regional competente para trámites de concesiones, vedas y derechos de agua.
+
+conagua-consejos-cuenca.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Territorios correspondientes a los Consejos de Cuenca (órganos colegiados de coordinación entre gobierno y usuarios).
+
+Utilidad: Consulta y planeación de acuerdos de distribución de recursos hídricos compartidos.
+
+conagua-cuerpos-agua.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Espejos y láminas de agua superficiales naturales o artificiales delimitados (lagos, lagunas y vasos receptores).
+
+Utilidad: Inventario de agua superficial y puntos de recarga local.
+
+conagua-presas.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Ubicación georreferenciada de presas de almacenamiento y control de avenidas censadas por CONAGUA, con datos sobre capacidad y uso del embalse.
+
+Utilidad: Identificación de fuentes reguladas de almacenamiento para riego agrícola.
+
+conagua-plantas-tratam.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Inventario de Plantas de Tratamiento de Aguas Residuales (PTAR) municipales e industriales, con datos de gasto tratado y tecnología de operación.
+
+Utilidad: Evaluar disponibilidad de agua tratada para reúso agrícola de riego o control ambiental de descargas.
+
+conagua-calidad-agua.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Estaciones de muestreo de la Red Nacional de Medición de Calidad del Agua (RNMCA) en cuerpos superficiales y pozos.
+
+Utilidad: Análisis de concentraciones fisicoquímicas (salinidad, metales, conductividad) del agua para evaluar su aptitud en riego.
+
+conagua-disponibilidad-sub.geojson y conagua-disponibilidad-sub-2023.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Polígonos de los acuíferos administrativos oficiales con su balance medio anual (recarga, extracción concesionada y déficit o superávit de agua subterránea). La capa 2023 incorpora la actualización oficial del DOF.
+
+Utilidad: Evaluar si la zona cuenta con disponibilidad legal de agua subterránea para pozos agrícolas o si opera bajo veda por sobreexplotación.
+
+conagua-zonas-inundacion.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Polígonos de áreas vulnerables o susceptibles a inundaciones por desbordamiento de cauces o encharcamiento severo.
+
+Utilidad: Máscara de penalización o riesgo por asfixia radicular en cultivos sensibles al exceso de humedad.
+
+conagua-humedales.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Delimitación de humedales naturales y zonas pantanosas de valor hidrológico y biológico.
+
+Utilidad: Áreas de restricción para la apertura de tierras agrícolas.
+
+inegi-rivers.geojson
+
+
+Geometría: Líneas.
+
+Contenido: Ejes de corrientes superficiales de la Red Hidrográfica del INEGI (ríos perennes, intermitentes y arroyos).
+
+Utilidad: Cálculo de proximidad a fuentes de agua superficial y modelado de escorrentía.
+
+4. Red Nacional de Caminos e Infraestructura Vial (INEGI - RNC)
+inegi-streets.geojson
+
+
+Geometría: Líneas.
+
+Contenido: Ejes de calles, avenidas y callejones de la traza urbana dentro de los asentamientos humanos.
+
+Utilidad: Modelado de conectividad interna en zonas urbanas y delimitación de cuadrícula vial.
+
+inegi-rnc-plaza-cobro.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Casetas de peaje sobre autopistas de cuota estatales y federales.
+
+Utilidad: Estimación de costos operativos y peajes en fletes de transporte de carga.
+
+inegi-rnc-puente.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Estructuras viales de puentes vehiculares sobre cauces, barrancas o vías férreas.
+
+Utilidad: Mapeo de puntos clave de conectividad y capacidad de soporte en rutas de carga.
+
+inegi-rnc-estructura.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Nodos de distribuidores viales, pasos a desnivel, entronques y gazas de incorporación.
+
+Utilidad: Construcción de topología de red para análisis de ruteo óptimo.
+
+inegi-rnc-poste-de-referencia.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Postes kilométricos oficiales colocados sobre los márgenes de carreteras federales y estatales.
+
+Utilidad: Referenciación lineal de puntos de entrega, accesos a parcelas o incidentes en campo.
+
+5. Directorio Económico y Establecimientos (INEGI - DENUE)
+inegi-denue-all.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Base completa de unidades económicas registradas por el DENUE en la zona (nombre comercial, actividad económica SCIAN, número de empleados y domicilio).
+
+Utilidad: Caracterización socioeconómica regional y mapeo de actividades comerciales o productivas.
+
+inegi-denue-logistics.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Empresas dedicadas a autotransporte de carga, bodegas de acopio, paquetería y terminales logísticas.
+
+Utilidad: Identificar capacidad instalada para flete, almacenamiento y movimiento de granos o insumos agrícolas.
+
+inegi-denue-hotels.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Establecimientos de hospedaje y alojamiento temporal (hoteles, moteles, posadas).
+
+Utilidad: Logística de estadía para supervisión y cuadrillas técnicas de campo.
+
+inegi-denue-police.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Instalaciones de seguridad pública (módulos, comandancias y destacamentos policiacos).
+
+Utilidad: Evaluación de infraestructura institucional en la red de caminos y centros de población.
+
+6. Cartografía Topográfica Escala 1:250,000 (INEGI - Topo 250k)
+inegi-topo-localidad250-a.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Perímetros consolidados de la mancha urbana de localidades urbanas y rurales (asentamientos humanos).
+
+Utilidad: Máscara para excluir zonas habitadas en análisis agrícolas y cálculo de proximidad a centros de mano de obra.
+
+inegi-topo-aerodromo250-a.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Pistas de aterrizaje, helipuertos y aeródromos catalogados.
+
+Utilidad: Áreas restringidas para desarrollo agrícola y referencia de infraestructura aeroportuaria.
+
+inegi-topo-subesta-elec250-a.geojson
+
+
+Geometría: Polígonos.
+
+Contenido: Subestaciones eléctricas de distribución y transmisión de alta y media tensión.
+
+Utilidad: Factibilidad de interconexión eléctrica para equipos de bombeo de pozos y plantas agroindustriales.
+
+inegi-topo-acueducto250-l.geojson
+
+
+Geometría: Líneas.
+
+Contenido: Tuberías y acueductos mayores de conducción hidráulica por gravedad o presión.
+
+Utilidad: Identificar derechos de vía y redes de abastecimiento de agua en bloque.
+
+inegi-topo-tunel250-l.geojson
+
+
+Geometría: Líneas.
+
+Contenido: Trazado lineal de túneles carreteros, ferroviarios o hidráulicos.
+
+Utilidad: Análisis de restricciones físicas en vías terrestres.
+
+inegi-topo-bordo250-l.geojson e inegi-topo-bordo250-p.geojson
+
+
+Geometría: Líneas (-l) y Puntos (-p).
+
+Contenido: Diques de tierra o muros de contención construidos para retener agua pluvial o proteger llanuras aluviales.
+
+Utilidad: Inventario de jagüeyes y reservorios de almacenamiento temporal para uso pecuario o de auxilio.
+
+inegi-topo-presa250-l.geojson e inegi-topo-presa250-p.geojson
+
+
+Geometría: Líneas (-l = cortina) y Puntos (-p = embalse).
+
+Contenido: Infraestructura de cortinas y represas registradas en la carta topográfica de INEGI.
+
+Utilidad: Complemento topográfico estructural a las presas registradas por CONAGUA.
+
+inegi-topo-lindero250-l.geojson
+
+
+Geometría: Líneas.
+
+Contenido: Cercos, divisiones físicas notables de parcelas o transiciones geográficas permanentes en el terreno.
+
+Utilidad: Identificación de bordes territoriales físicos.
+
+inegi-topo-punto-acotad250-p.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Puntos con valores de elevación precisos (altitud sobre el nivel del mar en metros).
+
+Utilidad: Calibración y validación altimétrica de modelos digitales de elevación (DEM).
+
+inegi-topo-rasgo-arqueo250-p.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Sitios y monumentos arqueológicos registrados (montículos, pirámides o vestigios).
+
+Utilidad: Zonas de exclusión legal por patrimonio cultural protegido.
+
+inegi-topo-ins-diversa250-p.geojson
+
+
+Geometría: Puntos.
+
+Contenido: Infraestructura puntual miscelánea (torres de comunicación, faros, antenas o tanques elevados).
+
+Utilidad: Puntos de referencia visual e inventario de instalaciones técnicas en campo.
